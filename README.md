@@ -1,1 +1,11 @@
-# Healthy_Lifestyle_Website
+# Инструкция по развертыванию базы данных и запуску Spring-приложения
+
+Установить MySQL Server, MySQL Workbench и MySQL Shell с официального сайта MySQL. В процессе установки задать пароль для root пользователя и запомнить его. После установки проверить запуск службы MySQL. Для Windows: открыть службы через Win + R, ввести services.msc, найти службу "MySQL80" и запустить. Альтернативно выполнить в командной строке: net start MySQL80.
+
+Открыть MySQL Workbench. Подключиться к локальному серверу (Local instance MySQL80), введя пароль root. Создать текстовый файл с расширением .sql. Вставить предоставленный SQL-код из файла database.sql в файл. В MySQL Workbench открыть файл через меню File → Open SQL Script. Выполнить скрипт, нажав кнопку Execute или используя сочетание клавиш Ctrl+Shift+Enter. Убедиться в отсутствии ошибок выполнения.
+
+Проверить создание базы данных health_lifestyle в левой панели Navigator. Обновить список схем, нажав кнопку обновления. Развернуть раздел Schemas, найти базу данных health_lifestyle. Для проверки таблиц выполнить запрос: USE health_lifestyle; SHOW TABLES;
+
+Получить исходный код Spring приложения. Распаковать или склонировать проект в рабочую директорию. Настроить файл application.properties. Проверить параметры подключения: spring.datasource.url, указав корректный порт и параметры подключения; spring.datasource.username и spring.datasource.password, используя учетные данные MySQL; установить spring.jpa.hibernate.ddl-auto в значение update для первого запуска; включить отображение SQL запросов через spring.jpa.show-sql=true.
+
+Запустить Spring приложение, выполнив главный класс с аннотацией @SpringBootApplication или через команды mvn spring-boot:run/gradle bootRun. Проверить логи приложения на наличие ошибок подключения к базе данных. Убедиться в успешном старте приложения и возможности выполнения запросов к базе данных через MySQL Workbench.
