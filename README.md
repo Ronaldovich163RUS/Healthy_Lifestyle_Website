@@ -1,6 +1,5 @@
 # ZOЖЕСТЬ🍏 
 
-Хостинг: https://pardonably-revealing-houndshark.cloudpub.ru/
 
 ## Описание 🌐
 
